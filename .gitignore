@@ -2,6 +2,7 @@
 *.o
 *.a
 *.so
+cvserver
 
 # Folders
 _obj

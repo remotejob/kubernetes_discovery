@@ -1,0 +1,17 @@
+{
+    "kind": "Endpoints",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "cv-service"
+    },
+    "subsets": [
+        {
+            "addresses": [
+                { "ip": "104.236.237.125" }
+            ],
+            "ports": [
+                { "port": 27017 }
+            ]
+        }
+    ]
+}
