@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cv-app
+spec:
+  template:
+    metadata:
+      labels:
+        run: cv-app
+    spec:
+      containers:
+      - name: cv-app
+        image:  gcr.io/jntlserv0/cvserver:0.1
+        env:
+        - name: SECRET_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: username
+        - name: SECRET_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: password
+        ports:
+        - containerPort: 8000

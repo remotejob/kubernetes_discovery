@@ -1,7 +1,7 @@
 ll: push
 
 # 0.0 shouldn't clobber any released builds
-TAG =0.0
+TAG =0.2
 PREFIX = gcr.io/jntlserv0/cvserver
 
 binary: cvserver.go
@@ -14,7 +14,7 @@ push: container
 	gcloud docker push $(PREFIX):$(TAG)
 
 set: push
-	 kubectl set image deployment/cvserver cvserver=$(PREFIX):$(TAG)
+	 kubectl set image deployment/cv-app cv-app=$(PREFIX):$(TAG)
 
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
