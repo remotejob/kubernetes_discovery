@@ -10,17 +10,11 @@ spec:
     spec:
       containers:
       - name: cv-app
-        image: remotejob/discovery 
+        image:  remotejob/discovery
         env:
         - name: SECRET_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: mysecret
-              key: username
+          value: admin
         - name: SECRET_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysecret
-              key: password
+          value: admin1Rel
         ports:
         - containerPort: 8000
