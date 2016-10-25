@@ -1,7 +1,7 @@
-ll: push
+all: push
 
 # 0.0 shouldn't clobber any released builds
-TAG =0.0
+TAG =0.1
 PREFIX = remotejob/kubernetes-discovery
 
 binary: cvserver.go
@@ -13,8 +13,8 @@ container: binary
 push: container
 	docker push $(PREFIX):$(TAG)
 
-set: push
-	 kubectl set image deployment/cv-app cv-app=$(PREFIX):$(TAG)
+set: 
+	 kubectl set image deployment/kubernetes-discovery kubernetes-discovery=$(PREFIX):$(TAG)
 
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
