@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: cv-app
-        image: remotejob/discovery 
+        image: remotejob/discovery:0.0 
         env:
         - name: SECRET_USERNAME
           valueFrom:
