@@ -1,7 +1,7 @@
 all: push
 
 # 0.0 shouldn't clobber any released builds
-TAG =0.1
+TAG =0.3
 PREFIX = remotejob/kubernetes-discovery
 
 binary: cvserver.go
