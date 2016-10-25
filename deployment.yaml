@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: cv-app
+  name: kubernetes-discovery
 spec:
   template:
     metadata:
       labels:
-        run: cv-app
+        run: kubernetes-discovery
     spec:
       containers:
-      - name: cv-app
-        image: remotejob/discovery:0.0 
+      - name: kubernetes-discovery
+        image: remotejob/kubernetes-discovery:0.0 
         env:
         - name: SECRET_USERNAME
           valueFrom:
